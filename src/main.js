@@ -10,7 +10,7 @@ Vue.prototype.$bus=new Vue()
 import './veeValidate'
 import './mock/mock.server.js'
 //引入store状态管理仓库
-import store from './store'
+// import store from './store'
 import VueResource from 'vue-resource'
 Vue.config.productionTip = false
 Vue.use(VueResource)
@@ -26,5 +26,5 @@ new Vue({
   },
   template: '<App/>',
   router, //注册路由器
-  store//注册store仓库
+  // store//注册store仓库
 })

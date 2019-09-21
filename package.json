@@ -42,7 +42,8 @@
     ],
     "rules": {
       "eslint-disable-next-line": 0,
-      "eslint-disable": 0
+      "eslint-disable": 0,
+      "no-unused-vars": "off"
     },
     "parserOptions": {
       "parser": "babel-eslint"

@@ -10,19 +10,19 @@
       <span class="gouwu iconfont icon-fangdajing"></span>
     </div>
     <!-- 静态显示的两种登录方式 -->
-    <div class="middle" v-if="qieHuan">
+    <div class="middle" v-if="a==1">
       <div class="logo">
         <img src="//yanxuan.nosdn.127.net/bd139d2c42205f749cd4ab78fa3d6c60.png" alt />
       </div>
-      <div id="phone" :class="{'on':isOn}">
+      <div id="phone" :class="{'on':isOn}"  @click="a=2">
         <span class="iconfont icon-shouji" @click="qieHuan=!qieHuan">手机号快捷登录</span>
       </div>
-      <div id="phonee" :class="{'on':!isOn}">
+      <div id="phonee" :class="{'on':!isOn}" @click="a=3">
         <span class="iconfont icon-message">邮箱账号登录</span>
       </div>
-    </div>
+    </div> 
     <!-- 手机登录方式 -->
-    <div class="xia" v-else-if="!qieHuan">
+    <div class="xia" v-else-if="a==2">
       <div class="logo">
         <img src="//yanxuan.nosdn.127.net/bd139d2c42205f749cd4ab78fa3d6c60.png" alt />
       </div>
@@ -52,14 +52,14 @@
           <a>遇到问题?</a>
           <div>使用密码验证登录</div>
         </div>
-        <button class="zhong">登录</button>
+        <button class="zhong" @click.prevent="login">登录</button>
         <form action="form_action.asp" method="get">
           <input type="checkbox" name="vehicle" value="Car" checked="checked" />我同意服务条款
         </form>
       </div>
     </div>
     <!-- 短信登录方式 -->
-    <div class="duanXin" v-else-if="false">
+    <div class="duanXin" v-else-if="a==3">
       <div class="duanx">
         <img src="//yanxuan.nosdn.127.net/bd139d2c42205f749cd4ab78fa3d6c60.png" alt />
       </div>
@@ -92,17 +92,19 @@
   </div>
 </template>
 <script>
+import {reqMessge,reqPhoneLogin,reqPasswordLogin} from '../../api/index'
 export default {
   //只是放置初始化的数据和表达式中的值，不能放静态属性的值
   data() {
     return {
       isOn: true ,//切换是否常亮
       qieHuan:true,//手机登录方式，还是短信登录方式
-
       phone:'',//输入手机号码内容
       time:0,//手机发请求时的倒计时
       messge:'',//发送过来的短信验证码
-      
+      name:'',//获取到的用户名
+      password:'',//登录密码
+      a:1
     };
   },
   computed: {
@@ -116,7 +118,10 @@ export default {
     // goPhone(){
     //   this.$router.replace('/login')
     // }
-    sendCode(){
+
+    //sendCode的作用有两个，其中一个点击之后是倒计时，另一个是点击发送请求，获取短信验证码
+    async sendCode(){
+      //倒计时功能，
       this.time=10
        this.timeId=setInterval(() => {
          this.time--
@@ -126,6 +131,25 @@ export default {
            clearInterval(this.timeId)
          }
        }, 1000);
+      //点击发送请求，获取短信验证码,需要引入api接口
+      const result=await reqMessge(this.phone)
+      if(result.code===0){
+          alert('获取成功！')
+        }else{
+          this.time=0
+          clearInterval(this.timeId)
+          alert('获取失败！')
+        }
+      // console.log(result)
+    },
+    //根据手机号获取到验证码，拿到验证码之后，输入进行登录
+    async login(){
+      const result=await reqPhoneLogin(this.phone,this.messge)
+      // console.log('result')
+      if(result.code===0){
+        alert()
+        this.$store.replace('')
+      }
     }
   },
 }

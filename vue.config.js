@@ -16,6 +16,7 @@ module.exports = {
     },
   },
   devServer: {
+    //配置跨域问题
     proxy: {
       '/api': {
         target: 'http://localhost:5000', // 目录地址

@@ -4,6 +4,10 @@ import ShiWu from '../pages/ShiWu/ShiWu.vue'
 import ShopCart from '../pages/ShopCart/ShopCart.vue'
 import FirstView from '../pages/FirstView/FirstView.vue'
 import Login from '../pages/Login/Login.vue'
+
+
+
+
 export default[
   {
     path:'/login',

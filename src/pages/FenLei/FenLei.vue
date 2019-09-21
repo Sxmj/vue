@@ -5,14 +5,17 @@
     </div>
     <div class="list">
       <div class="ht">
-        <li v-for="(sho,index) in shop" :key="index">
+        <ul class="content">
+          <li v-for="(sho,index) in shop" :key="index">
           <div
            class="lit"
-           :class="{'on':isShow}" 
-           @click="ht"
-           >{{sho.name}}</div>
+           :class="{'on':isFlag==index}" 
+           @click="ht(index)"
+           >
+           {{sho.name}}
+           </div>
         </li>
-        
+        </ul>
       </div>
       <div class="right">
         <!-- Swiper -->
@@ -73,17 +76,19 @@
 <script>
 import Swiper from "swiper";
 import "swiper/dist/css/swiper.css";
-import axios from "axios"
+import axios from "axios";
+import BScroll from "better-scroll";
 export default {
   data() {
     return {
       isShow:false,//默认不显示
       shop:[],
+      isFlag:0,
     }
   },
   methods: {
-    ht(){
-      this.isShow=!this.isShow
+    ht(index){
+      this.isFlag=index
     }
   },
  async mounted() {
@@ -125,6 +130,11 @@ export default {
         el: ".swiper-scrollbar"
       }
     });
+
+    this.scroll = new BScroll(".ht", {
+      scrollY: true,
+      click: true
+    });
     
   }
   
@@ -136,6 +146,10 @@ export default {
   height 100%
   // background-color green
   .header
+    position fixed
+    top 0
+    z-index 10
+
     width: 100%
     height: 50px
     // background-color cyan
@@ -150,7 +164,7 @@ export default {
       background-color: #EDEDED
       font-size: 14px
   .list
-    margin-top: 15px
+    margin-top 50px
     width: 100%
     height: 500px
     // background-color cyan
@@ -161,17 +175,19 @@ export default {
       height: 100%
       text-align: center
       float: left
+
       li
         width: 100%
         height: 50px
         .lit
+          
           width: 100%
           height: 30px
           font-size: 14px
           line-height: 30px
           text-align: center
           &.on
-            border-left: 3px solid red
+            border-left: 1px solid red
     .right
       width: 300px
       float: right
