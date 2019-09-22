@@ -9,11 +9,9 @@
           <li v-for="(sho,index) in shop" :key="index">
           <div
            class="lit"
-           :class="{'on':isFlag==index}" 
            @click="ht(index)"
-           >
-           {{sho.name}}
-           </div>
+          :class="{'on':isFlag==index}"
+           >{{sho.name}}</div>
         </li>
         </ul>
       </div>
@@ -69,6 +67,7 @@
             <span>明星单品</span>
           </div>
         </div>
+        <router-view></router-view>
       </div>
     </div>
   </div>
@@ -78,33 +77,44 @@ import Swiper from "swiper";
 import "swiper/dist/css/swiper.css";
 import axios from "axios";
 import BScroll from "better-scroll";
+import {mapState} from 'vuex'
 export default {
   data() {
     return {
       isShow:false,//默认不显示
-      shop:[],
-      isFlag:0,
+      // shop:[],
+      isFlag:0,//设定一个变量存储当前li的索引，
     }
   },
+  computed: {
+    ...mapState(['shop'])
+    // ...mapState(['shop']),
+  },
   methods: {
+    //点击哪一个让那一个常亮，将这个状态放到data中去管理
     ht(index){
+      //存储当前点击状态的这个索引值
       this.isFlag=index
+      // console.log(this.isFlag)
+      // this.$router.push('/fenlei/firstleilist')
     }
   },
  async mounted() {
     // this.$store.dispatch()
     /* eslint-disable */
-    try {
-       const result = await axios.get('/fenlei')
-       console.log(result.data.data)
-       if(result.data.code==0){
-         console.log('hah')
-         this.shop=result.data.data
-         console.log(this.shop)
-       }
-    } catch (error) {
-      console.log("页面加载错误")
-    }
+    // try {
+    //    const result = await axios.get('/fenlei')
+    //   //  console.log(result.data.data)
+    //    if(result.data.code==0){
+    //      console.log('hah')
+    //      //发请求拿到数据之后，更新data中的shop状态
+    //      this.shop=result.data.data
+    //      console.log(this.shop)
+    //    }
+    // } catch (error) {
+    //   console.log("页面加载错误")
+    // }
+    this.$store.dispatch('getList')
       // .then(function (response) {
       //   console.log(response);
       // })
@@ -118,7 +128,11 @@ export default {
       pagination: {
         el: ".swiper-pagination"
       },
-
+      //配置自动轮播
+      autoplay: {
+            disableOnInteraction: false,
+            delay:2000
+      },
       // 如果需要前进后退按钮
       navigation: {
         nextEl: ".swiper-button-next",
@@ -207,7 +221,7 @@ export default {
         height 350px
         // background-color: red
         position absolute 
-        left 50%
+        left 37%
         top 50%
         transform translate(-50%, -50%)
         margin-top 40px

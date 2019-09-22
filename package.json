@@ -12,6 +12,7 @@
     "babel-plugin-component": "^1.1.1",
     "better-scroll": "^1.15.2",
     "core-js": "^2.6.5",
+    "express": "^4.17.1",
     "mockjs": "^1.0.1-beta3",
     "stylus": "^0.54.7",
     "stylus-loader": "^3.0.2",

@@ -39,11 +39,12 @@
         <div class="swiper-slide">
           <img src="../../../public/img/e47220bbd8030b9c26f574eeb769dfde.jpg" alt />
         </div>
+        <ul  class="swiper-pagination"></ul>
       </div>
       <!-- 如果需要分页器 -->
       <div class="swiper-pagination"></div>
       <!-- 如果需要滚动条 -->
-      <div class="swiper-scrollbar"></div>
+      <!-- <div class="swiper-scrollbar"></div> -->
     </div>
     <div class="moreCate" v-show="isShow">
       <div class="rig1">全部频道</div>
@@ -168,6 +169,11 @@ export default {
       pagination: {
         el: ".swiper-pagination"
       },
+      //配置自动轮播
+      autoplay: {
+            disableOnInteraction: false,
+            delay:2000
+      },
 
       // 如果需要前进后退按钮
       navigation: {
@@ -239,9 +245,24 @@ export default {
 .swiper-container
   width: 100%
   height: 200px
-  img
-    width: 100%
-    height: 100%
+  .swiper-wrapper
+    .swiper-slide
+      img
+        width: 100%
+        height: 100%
+
+        //修改小圆点的默认样式失败
+  // .swiper-pagination
+  //   width 10px
+  //   height 3px
+  //   border-radius 0
+  //   &.active
+  //     background red
+  //     width .8rem !important
+
+
+
+
 .moreCate
   width: 100%
   height: 200px

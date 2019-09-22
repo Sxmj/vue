@@ -1,3 +1,3 @@
 //包含了多个mutation方法名的常量
-export default RECEVE_MESSGE='receveMessge'
-export default R
+export const RECEVE_MESSGE='receveMessge'
+export const RECEVE_LIST = 'receveList'

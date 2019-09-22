@@ -14,11 +14,11 @@
       <div class="logo">
         <img src="//yanxuan.nosdn.127.net/bd139d2c42205f749cd4ab78fa3d6c60.png" alt />
       </div>
-      <div id="phone" :class="{'on':isOn}"  @click="a=2">
+      <div id="phone" :class="{'on':isOn}"  @click.prevent="a=2">
         <span class="iconfont icon-shouji" @click="qieHuan=!qieHuan">手机号快捷登录</span>
       </div>
-      <div id="phonee" :class="{'on':!isOn}" @click="a=3">
-        <span class="iconfont icon-message">邮箱账号登录</span>
+      <div id="phonee" :class="{'on':!isOn}" @click.prevent="a=3">
+        <span class="iconfont icon-message" >邮箱账号登录</span>
       </div>
     </div> 
     <!-- 手机登录方式 -->
@@ -50,14 +50,18 @@
       <div class="dd">
         <div class="shang">
           <a>遇到问题?</a>
-          <div>使用密码验证登录</div>
+          <div @click.prevent="a=3">使用密码验证登录</div>
         </div>
         <button class="zhong" @click.prevent="login">登录</button>
         <form action="form_action.asp" method="get">
           <input type="checkbox" name="vehicle" value="Car" checked="checked" />我同意服务条款
         </form>
+        <div class="qiTa">
+        <span @click.prevent="a=3">其他登录的方式 ></span>
+      </div>
       </div>
     </div>
+    
     <!-- 短信登录方式 -->
     <div class="duanXin" v-else-if="a==3">
       <div class="duanx">
@@ -66,11 +70,21 @@
       <div class="duanxi">
         <form action>
           <section>
-            <input type="tel" maxlength="11" placeholder="请输入邮箱账号" />
+            <input type="tel" maxlength="11" v-model="name" v-validate="'required'" name="name" placeholder="请输入邮箱账号" />
+            <span
+                style="color:green"
+                v-show="errors.has('name')"
+                class="help is-danger"
+              >{{ errors.first('name') }}</span>
           </section>
           <section>
-            <input type="tel" maxlength="6" placeholder="请输入密码" />
-            <button>获取验证码</button>
+            <input type="tel" maxlength="6" v-model="password" v-validate="'required'" name="password" placeholder="请输入密码" />
+            <span
+                style="color:green"
+                v-show="errors.has('password')"
+                class="help is-danger"
+              >{{ errors.first('password') }}</span>
+            <!-- <button>获取验证码</button> -->
           </section>
         </form>
       </div>
@@ -78,7 +92,7 @@
       <div class="duanxx">
         <div class="shang">
           <a>忘记密码?</a>
-          <div>短信快捷登录</div>
+          <div @click.prevent="a=2">短信快捷登录</div>
         </div>
         <button class="zhong">登录</button>
         <form action="form_action.asp" method="get">
@@ -86,7 +100,7 @@
         </form>
       </div>
       <div class="duanxFooter">
-        <span>其他登录的方式 ></span>
+        <span @click.prevent="a=2">其他登录的方式 ></span>
       </div>
     </div>
   </div>
@@ -264,6 +278,7 @@ export default {
             // border 0
             outline: none
             border-bottom: red
+            margin-bottom 30px
             // text-align center
           button
             position: absolute
@@ -305,6 +320,10 @@ export default {
         color: white
       form
         margin: 20px
+      .qiTa
+        width 100%
+        height 30px
+        text-align center
   
   .duanXin
     width: 100%
