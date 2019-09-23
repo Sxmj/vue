@@ -1,46 +1,93 @@
 <template>
-  <!-- <div class="lei">
+  <div class="lei">
     <div class="yuan">
-      <img src="../../../public/img/content/3e52cf9e7db8ff6eb442b83043ae44ce.png" alt />
-      <span>明星单品</span>
+      <img :src=list.img alt />
+      <span>{{list.nam}}</span>
     </div>
     <div class="yuan">
-      <img src="../../../public/img/content/3e52cf9e7db8ff6eb442b83043ae44ce.png" alt />
-      <span>明星单品</span>
+      <img :src=list.img alt />
+      <span>{{list.nam}}</span>
     </div>
     <div class="yuan">
-      <img src="../../../public/img/content/3e52cf9e7db8ff6eb442b83043ae44ce.png" alt />
-      <span>明星单品</span>
+      <img :src=list.img alt />
+      <span>{{list.nam}}</span>
     </div>
     <div class="yuan">
-      <img src="../../../public/img/content/3e52cf9e7db8ff6eb442b83043ae44ce.png" alt />
-      <span>明星单品</span>
+      <img :src=list.img alt />
+      <span>{{list.nam}}</span>
     </div>
     <div class="yuan">
-      <img src="../../../public/img/content/3e52cf9e7db8ff6eb442b83043ae44ce.png" alt />
-      <span>明星单品</span>
+      <img :src=list.img alt />
+      <span>{{list.nam}}</span>
     </div>
     <div class="yuan">
-      <img src="../../../public/img/content/3e52cf9e7db8ff6eb442b83043ae44ce.png" alt />
-      <span>明星单品</span>
+      <img :src=list.img alt />
+      <span>{{list.nam}}</span>
     </div>
     <div class="yuan">
-      <img src="../../../public/img/content/3e52cf9e7db8ff6eb442b83043ae44ce.png" alt />
-      <span>明星单品</span>
+      <img :src=list.img alt />
+      <span>{{list.nam}}</span>
     </div>
     <div class="yuan">
-      <img src="../../../public/img/content/3e52cf9e7db8ff6eb442b83043ae44ce.png" alt />
-      <span>明星单品</span>
+      <img :src=list.img alt />
+      <span>{{list.nam}}</span>
     </div>
     <div class="yuan">
-      <img src="../../../public/img/content/3e52cf9e7db8ff6eb442b83043ae44ce.png" alt />
-      <span>明星单品</span>
+      <img :src=list.img alt />
+      <span>{{list.nam}}</span>
     </div>
-  </div> -->
-  <div>fdsf</div>
+  </div>
+  <!-- <div>{{$route.params.id}}</div> -->
 </template>
 <script>
-export default {};
+import {mapState} from 'vuex'
+import axios from "axios";
+export default {
+  data() {
+    return {
+      list:{}//需要显示的消息详情对象
+    }
+  },
+  computed: {
+    // ...mapState(['shop'])
+  },
+ async mounted() {
+    // this.$store.dispatch('getList')
+    try {
+       const result = await axios.get('/fenlei')
+      //  console.log(result.data.data)
+       if(result.data.code==0){
+         const shop=result.data.data
+        //  console.log(shop)
+        const id=this.$route.params.id*1
+        const detail=shop.find(detail=>detail.id===id)
+        // console.log(detail)
+        this.list=detail
+       }
+    } catch (error) {
+      // console.log("页面加载错误")
+      alert('页面加载错误！')
+    }
+  },
+  watch: {
+   async $route(value){
+      try {
+       const result = await axios.get('/fenlei')
+      //  console.log(result.data.data)
+       if(result.data.code==0){
+        //  console.log('watch')
+         const shop=result.data.data
+        const id=value.params.id*1
+        const detail=shop.find(detail=>detail.id===id)
+        this.list=detail
+       }
+    } catch (error) {
+      // console.log("页面加载错误")
+      alert('页面加载错误！')
+    }
+    }
+  },
+};
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
 .lei

@@ -18,7 +18,6 @@ Vue.use(VueResource)
 //   render: h => h(App),
 //   router
 // }).$mount('#app')
-
 new Vue({
   el: '#app',
   components: {

@@ -6,7 +6,7 @@
     <div class="list">
       <div class="ht">
         <ul class="content">
-          <li v-for="(sho,index) in shop" :key="index">
+          <li v-for="(sho,index) in shop" :key="index" style="list-style-type:none">
           <div
            class="lit"
            @click="ht(index)"
@@ -21,6 +21,7 @@
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <img src="../../../public/img/content/40ee9e553e6a2c228b0544bff65a618d (1).jpg" alt />
+            <!-- <img :src="sho.bigImg" alt=""> -->
             </div>
             <div class="swiper-slide">
               <img src="../../../public/img/content/f7f216f5d01874f8f768ccfd78a7112e.jpg" alt />
@@ -29,7 +30,7 @@
           <!-- Add Pagination -->
           <div class="swiper-pagination"></div>
         </div>
-        <div class="lei">
+        <!-- <div class="lei">
           <div class="yuan">
             <img src="../../../public/img/content/3e52cf9e7db8ff6eb442b83043ae44ce.png" alt="">
             <span>明星单品</span>
@@ -66,7 +67,7 @@
             <img src="../../../public/img/content/3e52cf9e7db8ff6eb442b83043ae44ce.png" alt="">
             <span>明星单品</span>
           </div>
-        </div>
+        </div> -->
         <router-view></router-view>
       </div>
     </div>
@@ -96,7 +97,7 @@ export default {
       //存储当前点击状态的这个索引值
       this.isFlag=index
       // console.log(this.isFlag)
-      // this.$router.push('/fenlei/firstleilist')
+      this.$router.push(`/fenlei/firstleilist/${index}`)
     }
   },
  async mounted() {

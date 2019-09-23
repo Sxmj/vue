@@ -5,7 +5,7 @@ import ShopCart from '../pages/ShopCart/ShopCart.vue'
 import FirstView from '../pages/FirstView/FirstView.vue'
 import Login from '../pages/Login/Login.vue'
 import FenLeiList from '../pages/FenLeiList/FenLeiList.vue'
-
+import FaView from '../pages/FaView/FaView.vue'
 
 
 export default[
@@ -26,8 +26,12 @@ export default[
     component: FenLei,
     children:[
       {
-        path: '/fenlei/firstleilist',
+        path: '/fenlei/firstleilist/:id',
         component:FenLeiList
+      },
+      {
+        path: '/fenlei',
+        redirect: '/fenlei/firstleilist/0'
       }
     ]
   },
@@ -40,9 +44,11 @@ export default[
      component: FirstView
   },
   {
-    path: '/',
-    redirect: '/firstview'
+    path: '/faview',
+    component: FaView
   },
-  
-
+  {
+    path: '/',
+    redirect:'firstview'
+  },
 ]

@@ -5,7 +5,7 @@ export default{
     const result= await reqList()
     if(result.code==0){
       const shop=result.data
-      console.log(shop)
+      // console.log(shop)
       commit(RECEVE_LIST,shop)
     }
   }

@@ -1,37 +1,85 @@
 {
   "code": 0,
   "info": [
-    {
-      "name": "推荐专区"
-
+    { 
+      "id":0,
+      "name": "推荐专区",
+      "nam":"明星单品",
+      "bigImg": "https://yanxuan.nosdn.127.net/c7de7e8850dc05df6943a1a39dce2558.jpg",
+      "img": "https://yanxuan.nosdn.127.net/71a5f1a0299e278f8193c193d8b7d1e4.png"
     },
     {
-      "name": "换季专区"
+      "id":1,
+      "name": "换季专区",
+      "nam":"初秋穿搭",
+      "bigImg": "https://yanxuan.nosdn.127.net/c7de7e8850dc05df6943a1a39dce2558.jpg",
+      "img": "https://yanxuan.nosdn.127.net/7e40e000828039f28ce8ac5af4141696.png"
     },
     {
-      "name": "爆品专区"
+      "id":2,
+      "name": "爆品专区",
+      "nam":"换季收纳",
+      "bigImg": "https://yanxuan.nosdn.127.net/fd9bb8dd511541082fac86e84750b45c.jpg",
+      "img": "https://yanxuan.nosdn.127.net/6cdb22d7d21269fc60dd87d77e6981e8.png"
     },
     {
-      "name": "居家生活"
+      "id":3,
+      "name": "居家生活",
+      "nam": "滋补美食",
+      "bigImg": "https://yanxuan.nosdn.127.net/c7de7e8850dc05df6943a1a39dce2558.jpg",
+      "img": "https://yanxuan.nosdn.127.net/71a5f1a0299e278f8193c193d8b7d1e4.png"
     },
     {
-      "name": "服饰鞋包"
+      "id":4,
+      "name": "服饰鞋包",
+      "nam":"早秋床品",
+      "bigImg": "https://yanxuan.nosdn.127.net/c7de7e8850dc05df6943a1a39dce2558.jpg",
+      "img": "https://yanxuan.nosdn.127.net/1fc252460ad0eb59bde2c761e8ab9342.png"
     },
     {
-      "name": "美食酒水"
+      "id":5,
+      "name": "美食酒水",
+      "nam":"秋日养生",
+      "bigImg": "https://yanxuan.nosdn.127.net/c7de7e8850dc05df6943a1a39dce2558.jpg",
+      "img": "https://yanxuan.nosdn.127.net/160274883e15e024802d25832f0e7ed1.png"
     },
     {
-      "name": "推荐专区"
-    }, {
-      "name": "换季专区"
-    }, {
-      "name": "爆品专区"
-    }, {
-      "name": "居家生活"
-    }, {
-      "name": "服饰鞋包"
-    }, {
-      "name": "美食酒水"
+      "id":6,
+      "name": "室外健身",
+      "nam":"户外生活",
+      "bigImg": "https://yanxuan.nosdn.127.net/c7de7e8850dc05df6943a1a39dce2558.jpg",
+      "img": "https://yanxuan.nosdn.127.net/50c4ad91a4a19192c815c1dbfd3c036c.png"
+    },
+    {
+      "id": 7,
+      "name": "换季专区",
+      "nam":"每一一补",
+      "bigImg": "https://yanxuan.nosdn.127.net/c7de7e8850dc05df6943a1a39dce2558.jpg",
+      "img": "https://yanxuan.nosdn.127.net/71a5f1a0299e278f8193c193d8b7d1e4.png"
+    },
+    {
+      "id": 8,
+      "name": "爆品专区",
+      "bigImg": "https://yanxuan.nosdn.127.net/c7de7e8850dc05df6943a1a39dce2558.jpg",
+      "img": "https://yanxuan.nosdn.127.net/04516a37a1f2aaaf6b388bbeaa4ec02a.png"
+    },
+    {
+      "id": 9,
+      "name": "居家生活",
+      "bigImg": "https://yanxuan.nosdn.127.net/c7de7e8850dc05df6943a1a39dce2558.jpg",
+      "img": "https://yanxuan.nosdn.127.net/71a5f1a0299e278f8193c193d8b7d1e4.png"
+    },
+    {
+      "id": 10,
+      "name": "服饰鞋包",
+      "bigImg": "https://yanxuan.nosdn.127.net/c7de7e8850dc05df6943a1a39dce2558.jpg",
+      "img": "https://yanxuan.nosdn.127.net/71a5f1a0299e278f8193c193d8b7d1e4.png"
+    },
+    {
+      "id": 11,
+      "name": "美食酒水",
+      "bigImg": "https://yanxuan.nosdn.127.net/fd9bb8dd511541082fac86e84750b45c.jpg",
+      "img": "https://yanxuan.nosdn.127.net/7e40e000828039f28ce8ac5af4141696.png"
     }
   ]
 }
