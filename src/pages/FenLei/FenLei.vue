@@ -116,6 +116,7 @@ export default {
     //   console.log("页面加载错误")
     // }
     this.$store.dispatch('getList')
+    
       // .then(function (response) {
       //   console.log(response);
       // })
@@ -167,7 +168,7 @@ export default {
 
     width: 100%
     height: 50px
-    // background-color cyan
+    background-color white
     display: flex
     justify-content: center
     align-items: center

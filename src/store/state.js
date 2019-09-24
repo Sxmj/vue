@@ -4,5 +4,7 @@ export default{
   message:'',//验证初始化的短信内容
   name:'',//初始化的用户名
   password:'',//初始化的密码
-  shop:[]
+  shop:[],
+  shiwu:[],
+  zxj:{}
 }

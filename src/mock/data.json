@@ -81,5 +81,62 @@
       "bigImg": "https://yanxuan.nosdn.127.net/fd9bb8dd511541082fac86e84750b45c.jpg",
       "img": "https://yanxuan.nosdn.127.net/7e40e000828039f28ce8ac5af4141696.png"
     }
-  ]
+  ],
+  "shiwu":[
+    {
+      "id":0,
+      "title":"推荐",
+      "fMinImg": "https://yanxuan.nosdn.127.net/0d598863e22ec3e40ae27397628463cf.jpg",
+      "fTitle": "网易未央:小周",
+      "fda": "秋天最要紧的,就是吃大闸蟹",
+      "fzhaxie": "大闸蟹礼券限时8.8折",
+      "fpbiaoqian": "6689人看过",
+      "fMaxImg": "https://yanxuan.nosdn.127.net/debe90c6dbfa8593f4a17b59ddbcf466.jpg",
+      "f1meiImg": "https://yanxuan.nosdn.127.net/d9d036fac85df6b30cf8c184e030323c.png",
+      "fxuanmei": "选妹",
+      "fchangnian": "常年断货的严选爆品终于上架了，回头客都在抢!",
+      "fmei1Img": "https://yanxuan.nosdn.127.net/6f5e7bb94350b7eed05134a9b1d83200.jpg",
+      "fguankan": "92w人观看",
+
+      "f2minImg": "https://yanxuan.nosdn.127.net/d9d036fac85df6b30cf8c184e030323c.png",
+      "f2mei":"选妹",
+      "fchangnian2": "产地直供农产品大赏！",
+      "fmei2Img": "https://yanxuan.nosdn.127.net/904058d32b7a4add853e8308caf55710.jpg",
+      "f2guankan": "60.5k人看过",
+
+      "f3minImg": "https://yanxuan.nosdn.127.net/d9d036fac85df6b30cf8c184e030323c.png",
+      "f3mei": "选妹",
+      "fchangnian3": "9月到了，秋天还会远吗？看看这个月都上了哪些换季必买的好物",
+      "fmei3Img": "https://yanxuan.nosdn.127.net/0214857510d17934f3189dbd25e33949.jpg",
+      "f3guankan": "12.7k人看过"
+
+    },
+    {
+      "id": 1,
+      "title":"好货内部价"
+     
+    },
+    {
+      "id": 2,
+      "title":"选购指南"
+    },
+    {
+      "id": 3,
+      "title":"回购单"
+    },
+    {
+      "id": 4,
+      "title":"晒单"
+    }
+  ],
+  "zxj":{
+    "zhentitle":"建议征集",
+    "zhenwenben":"告诉我们的，你的好物标准",
+    "zhenmintu": "https://yanxuan.nosdn.127.net/6fbb1dc250ec56595717c3701f58c642.jpeg",
+    "zhenhua":"你会喜欢蜂蜜茶柚子吗？",
+    "zhenjianyi":"30条建议",
+    "zhenkanguo":"459人看过",
+    "zhenneirong": "我们找到了海外优质的果园，希望能调制一款随时可冲饮的水果茶。你会更喜欢常见的玻璃罐装，还是会希望有方便携带出门的独立小包装。如若推出罐装款，是否会需要搭配一些配件汤勺？关于其他口味的想法，都快来说说吧"
+  }
+
 }

@@ -1,7 +1,7 @@
 <template>
   <div class="login">
     <div class="headerTop">
-      <span class="room iconfont icon-menu-home-normal"></span>
+      <span class="room iconfont icon-menu-home-normal"  @click="$router.push('/firstview')"></span>
 
       <span class="wangyi">网易严选</span>
       <!-- <span class="fangda iconfont icon-gouwuche"></span> -->

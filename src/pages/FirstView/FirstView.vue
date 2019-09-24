@@ -1,5 +1,5 @@
 <template>
-  <div class="header">
+  <div class="wrapper">
     <div class="headerTop">
       <div class="logo">
         <span>网易严选</span>
@@ -182,7 +182,7 @@ export default {
       }
     });
     this.scroll = new BScroll(".wrapper", {
-      scrollX: true,
+      scrollY: true,
       click: true
     });
   },
@@ -194,7 +194,7 @@ export default {
 };
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
-.header
+.wrapper
   background-color: white
   // position relative
   .headerTop

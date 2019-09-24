@@ -15,7 +15,7 @@
             <span class="hh">首页</span>
       </a>
       <a href="javascript:;" 
-      :class="{'on':$route.path==='/fenlei'}"
+      :class="{'on':$route.path==='/fenlei/firstleilist/0'}"
       @click="goto('/fenlei')"
       class='to'
        >
@@ -25,7 +25,7 @@
           <span class="hh">分类</span>
       </a>
         <a href="javascript:;"
-        :class="{'on':$route.path==='/shiwu'}"
+        :class="{'on':$route.path==='/shiwu/0'}"
         @click="goto('/shiwu')"
         class='to'
           >
